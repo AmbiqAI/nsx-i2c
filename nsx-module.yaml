@@ -1,48 +1,39 @@
 schema_version: 1
-
 module:
   name: nsx-i2c
   type: backend_specific
-  version: "0.1.0"
-
+  version: 0.1.1
 support:
   ambiqsuite: true
   zephyr: false
-
 summary: I2C wrapper helpers for integrating sensors and peripherals over the I2C bus.
-
 capabilities:
   - i2c
   - sensor_bus
   - peripheral_bus
-
 use_cases:
   - sensor bring-up over I2C
   - simple peripheral communication
   - board validation using I2C-attached devices
-
 agent_keywords:
   - i2c
   - sensor
   - bus
   - wire
-
 build:
   cmake:
     package: nsx_i2c
     targets:
       - nsx::i2c
-
 depends:
   required:
     - nsx-core
     - nsx-harness
     - nsx-soc-hal
   optional: []
-
 compatibility:
   boards:
-    - "*"
+    - '*'
   socs:
     - apollo3
     - apollo3p
